@@ -1,0 +1,17 @@
+<ion-select
+  interface="popover"
+  [class]="customClass"
+  [required]="required"
+  [interfaceOptions]="interfaceOptions"  
+  [ngModel]="currentValue"
+  (ngModelChange)="currentValueChange($event)"
+  [placeholder]="selectLabel"
+>
+  <ion-select-option
+    *ngFor="let item of items; let i = index;"
+    [value]="item[valueProperty]"
+    >
+    {{item[descriptionProperty]}} {{ hasSuffix && item[valueProperty] === valueSuffix ? suffix : ''}}
+  </ion-select-option>
+
+</ion-select>
